@@ -4,9 +4,7 @@ import { motion } from 'motion/react';
 import { siteConfig } from '@/config/site.config';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Announcement, AnnouncementTitle ,AnnouncementTag} from '@/components/ui/announcement';
 import { ArrowRight, Zap } from 'lucide-react';
-import { ArrowUpRightIcon } from 'lucide-react';
 
 export function HeroSection() {
 
@@ -29,23 +27,6 @@ export function HeroSection() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="space-y-8"
         >
-          {/* Announcement Component */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1 }}
-          >
-            <Announcement
-              themed
-              className="mx-auto flex items-center justify-center w-fit max-w-full text-xs sm:text-sm md:text-base px-4 py-1.5 border border-border dark:border-secondary"
-            >
-              <AnnouncementTag className="truncate">Latest update</AnnouncementTag>
-              <AnnouncementTitle className="flex items-center gap-2">
-                New Portfolio V4 🎉
-                <ArrowUpRightIcon className="shrink-0 text-muted-foreground" size={16} />
-              </AnnouncementTitle>
-            </Announcement>
-          </motion.div>
           {/* Main Heading - show name and description from config */}
           <div className="space-y-4 sm:space-y-6">
             <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[8rem] font-extrabold tracking-tight leading-none">

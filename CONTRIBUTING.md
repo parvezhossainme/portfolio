@@ -50,12 +50,12 @@ We welcome contributions in the form of bug reports, feature requests, code impr
    If the original repository has been updated and you would like to sync your fork with it, you can do so by adding the original repository as a remote and pulling from it:
 
    ```bash
-   git remote add upstream https://github.com/muhammad-fiaz/portfolio.git
+   git remote add upstream https://github.com/parvezhossainme/portfolio.git
    git pull upstream main
    ```
 
 ## Reporting Issues 🐞
 
-If you find any issues or have suggestions for improvements, please open an issue on the [Issues](https://github.com/muhammad-fiaz/portfolio/issues) page. Be sure to include a clear description of the problem or suggestion.
+If you find any issues or have suggestions for improvements, please open an issue on the [Issues](https://github.com/parvezhossainme/portfolio/issues) page. Be sure to include a clear description of the problem or suggestion.
 
 Thank you for contributing to my Portfolio! ❤️

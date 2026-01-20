@@ -62,7 +62,7 @@ export const siteConfig: SiteConfig = {
   description: 'Full Stack developer creating useful & delightful web experiences. Exploring ML & AI.',
   about:
     'I am a Full Stack developer who loves creating new things. I spend my spare time building free apps & tools, and I am currently diving into Machine Learning & AI to expand my problem‑solving toolkit. Always open to collaboration & new challenges.',
-    author_img: 'https://avatars.githubusercontent.com/u/parvezhossainme?v=4',
+    author_img: 'https://avatars.githubusercontent.com/parvezhossainme?v=4',
     keywords: [
     'Parvez Hossain',
     'Full Stack Developer',
