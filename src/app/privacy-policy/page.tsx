@@ -25,8 +25,8 @@ export default function PrivacyPolicy() {
           <p className="text-sm text-muted-foreground mb-4">Last updated: August 20, 2025.</p>
 
           <p className="mb-4">
-            This Privacy Policy describes how muhammadfiaz.com and fiaz.dev
-            (collectively &#39;we&#39;, &#39;us&#39;, or &#39;Fiaz Technologies&#39;) collect,
+            This Privacy Policy describes how parvezdev.com
+            (&#39;we&#39;, &#39;us&#39;, or &#39;Parvez Hossain&#39;) collect,
             use, disclose, and protect personal information when you visit or
             use our portfolio and related services. By accessing or using our
             Sites, you acknowledge that you have read and understood this
@@ -34,12 +34,12 @@ export default function PrivacyPolicy() {
             described herein.
           </p>
           <p className="mb-4 text-sm">
-            This Policy also applies to muhammadfiaz.com, fiaz.dev and any
+            This Policy also applies to parvezdev.com and any
             other websites, domains, applications, services, products, or
-            digital properties owned, operated, or offered by Muhammad Fiaz
-            (personally) or Fiaz Technologies. For clarity, references to
-            &quot;we&quot;, &quot;us&quot; or &quot;our&quot; in this Policy include both
-            Muhammad Fiaz and Fiaz Technologies where applicable.
+            digital properties owned, operated, or offered by Parvez Hossain.
+            For clarity, references to
+            &quot;we&quot;, &quot;us&quot; or &quot;our&quot; in this Policy refer to
+            Parvez Hossain where applicable.
           </p>
 
           <p className="mb-2 text-sm font-medium">Minimal collection statement</p>
@@ -82,16 +82,16 @@ export default function PrivacyPolicy() {
           <p className="mb-2 text-sm">We use cookies and similar tracking technologies to enable core site functionality, remember user preferences, and provide analytics about site usage. You can control or delete cookies through your browser settings. Third-party analytics providers (e.g., Google Analytics) may also drop cookies; consult their privacy policies for details and opt-out options where available.</p>
 
           <h4 id="security" className="mt-4 font-semibold">Security</h4>
-          <p className="mb-2 text-sm">We use industry-standard security measures (encryption in transit via HTTPS, access controls, and secure hosting) to protect personal data. We regularly review our security practices but cannot guarantee that unauthorized access, hacking, or data loss will never occur. Report suspected breaches to contact@muhammadfiaz.com immediately.</p>
+          <p className="mb-2 text-sm">We use industry-standard security measures (encryption in transit via HTTPS, access controls, and secure hosting) to protect personal data. We regularly review our security practices but cannot guarantee that unauthorized access, hacking, or data loss will never occur. Report suspected breaches to parvezhossainme@gmail.com immediately.</p>
 
           <h4 id="rights" className="mt-4 font-semibold">Your Rights</h4>
-          <p className="mb-2 text-sm">You may have rights under applicable data protection laws including to access, correct, update, or delete your personal data. Subject to verification and applicable exceptions, you may also have rights to restrict or object to processing and to request portability of your data. To exercise your rights, send a request to contact@muhammadfiaz.com. We may ask for information to verify your identity before fulfilling requests.</p>
+          <p className="mb-2 text-sm">You may have rights under applicable data protection laws including to access, correct, update, or delete your personal data. Subject to verification and applicable exceptions, you may also have rights to restrict or object to processing and to request portability of your data. To exercise your rights, send a request to parvezhossainme@gmail.com. We may ask for information to verify your identity before fulfilling requests.</p>
 
           <h4 id="international" className="mt-4 font-semibold">International Users & Transfers</h4>
           <p className="mb-2 text-sm">Our Sites are accessible globally and personal data may be transferred to, stored, and processed in India or other countries. We will take steps (such as standard contractual clauses or other appropriate safeguards) when required by law to protect your personal data during cross-border transfers.</p>
 
           <h4 id="contact" className="mt-4 font-semibold">Contact</h4>
-          <p className="mb-2 text-sm">For privacy requests or questions, contact: <a className="underline text-primary" href="mailto:contact@muhammadfiaz.com">contact@muhammadfiaz.com</a> (personal), <a className="underline text-primary" href="mailto:s.muhammadfiaz2003@gmail.com">s.muhammadfiaz2003@gmail.com</a> (personal), or <a className="underline text-primary" href="mailto:contactus@fiaz.dev">contactus@fiaz.dev</a> (Fiaz Technologies). For legal requests, contact <a className="underline text-primary" href="mailto:legal@fiaz.dev">legal@fiaz.dev</a>. For privacy-related disputes, please include sufficient information to identify your request and allow us to respond promptly.</p>
+          <p className="mb-2 text-sm">For privacy requests or questions, contact: <a className="underline text-primary" href="mailto:parvezhossainme@gmail.com">parvezhossainme@gmail.com</a>. For privacy-related disputes, please include sufficient information to identify your request and allow us to respond promptly.</p>
 
           <p className="mt-6 text-sm">We may update this Privacy Policy from time to time. The &quot;Last updated&quot; date at the top indicates the most recent revision; please review this page periodically to stay informed about any changes.</p>
           </div>

@@ -1,35 +1,4 @@
-
-
-<div align="center">
-  <h1>Portfolio V4 🎉</h1>
-
-![Stability](https://img.shields.io/badge/stability-active-brightgreen.svg) ![MIT License](https://img.shields.io/badge/license-MIT-green)
-[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/muhammad-fiaz/portfolio)
-[![Build Passing](https://badge.buildkite.com/sample.svg?status=passing)](https://github.com/muhammad-fiaz/portfolio)
-[![Continuous Integration](https://github.com/muhammad-fiaz/portfolio/actions/workflows/prettier.yml/badge.svg)](https://github.com/muhammad-fiaz/portfolio/actions/workflows/prettier.yml)
-[![CodeQL](https://github.com/muhammad-fiaz/portfolio/actions/workflows/codeql.yml/badge.svg)](https://github.com/muhammad-fiaz/portfolio/actions/workflows/codeql.yml)
-[![Dependency Review](https://github.com/muhammad-fiaz/portfolio/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/muhammad-fiaz/portfolio/actions/workflows/dependency-review.yml)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg)](https://GitHub.com/muhammad-fiaz/portfolio)
-[![Maintainer](https://img.shields.io/badge/maintainer-muhammad--fiaz-blue)](https://GitHub.com/muhammad-fiaz)
-
-[![Latest Release](https://img.shields.io/github/release/muhammad-fiaz/portfolio.svg)](https://github.com/muhammad-fiaz/portfolio/releases/latest)
-[![Current Version](https://img.shields.io/badge/Current%20Version-v4.0.0-blue.svg)](https://github.com/muhammad-fiaz/portfolio/releases/tag/v4.0.0)
-
-![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-
-[![GitHub visitors](https://img.shields.io/github/contributors/muhammad-fiaz/portfolio.svg)](https://github.com/muhammad-fiaz/portfolio/graphs/contributors)
-![Popularity Views](https://komarev.com/ghpvc/?username=muhammad-fiaz&style=flat&label=Popularity)
-![GitHub stars](https://img.shields.io/github/stars/muhammad-fiaz/portfolio.svg?style=social&label=Stars)
-
-[![Follow me on GitHub](https://img.shields.io/github/followers/muhammad-fiaz?label=Follow&style=social)](https://github.com/muhammad-fiaz)
-[![Discord](https://img.shields.io/badge/Discord-Join%20us-7289DA?logo=discord&style=flat-square)](https://discord.gg/mXMhy2EX)
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F6MME1W)
-
-</div>
-
-
+Main: https://github.com/muhammad-fiaz/portfolio/ [thanks]
 
 Thank you for your interest in my portfolio project! 🎉
 
@@ -60,7 +29,7 @@ Your support has been invaluable and I look forward to sharing even more with V4
 
 # About This Project
 
-This project is built with Next.js and React, showcasing [Muhammad Fiaz](https://github.com/muhammad-fiaz/)'s [personal website](https://muhammadfiaz.com/).
+This project is built with Next.js and React, showcasing [Parvez Hossain](https://github.com/parvezhossainme/)'s [personal website](https://parvezdev.com/).
 
 **Feel free to use this project for your portfolio or as a project reference. If you find it helpful, don't forget to give it a ⭐️ to show your support. [Fork this repo](https://github.com/muhammad-fiaz/portfolio/fork) if you want to contribute✨**
 

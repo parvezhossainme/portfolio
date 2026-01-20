@@ -4,13 +4,13 @@ Welcome to my portfolio repository! Your contributions and suggestions are welco
 
 ## Code of Conduct
 
-This project and its community adhere to the [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report any unacceptable behavior to [email](s.muhammadfiaz2003@gmail.com).
+This project and its community adhere to the [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report any unacceptable behavior to [email](parvezhossainme@gmail.com).
 
 ## How to Contribute 👻
 
 We welcome contributions in the form of bug reports, feature requests, code improvements, and more. Here's how you can contribute:
 
-1. **Fork the Repository:** Click the ["Fork"](https://github.com/muhammad-fiaz/portfolio/fork) button on the top right of the repository's page.
+1. **Fork the Repository:** Click the ["Fork"](https://github.com/parvezhossainme/portfolio/fork) button on the top right of the repository's page.
 
 2. **Clone Your Fork to Your Local Machine:**
 
@@ -39,7 +39,7 @@ We welcome contributions in the form of bug reports, feature requests, code impr
 
 6. **Create a Pull Request:**
 
-   Go back to the repository on GitHub and click the ["New Pull Request"](https://github.com/muhammad-fiaz/portfolio/pulls) button on your branch. Fill out the form with a title and a detailed description, then submit the pull request.
+   Go back to the repository on GitHub and click the ["New Pull Request"](https://github.com/parvezhossainme/portfolio/pulls) button on your branch. Fill out the form with a title and a detailed description, then submit the pull request.
 
 7. **Wait for Your Pull Request to Be Reviewed:**
 

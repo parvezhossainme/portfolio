@@ -32,11 +32,11 @@ export function AboutContent() {
               <div className="absolute bottom-0 right-0 w-[180px] h-[180px] bg-gradient-to-br from-secondary/30 to-transparent rounded-lg blur-xl opacity-30 dark:opacity-50" />
             </div>
           </div>
-          <div className="text-center text-3xl font-extrabold text-primary mt-4">Muhammad Fiaz</div>
+          <div className="text-center text-3xl font-extrabold text-primary mt-4">Parvez Hossain</div>
         </CardHeader>
         <CardContent className="space-y-4 relative z-10">
           <p className="text-muted-foreground leading-relaxed">
-            Hi, I&apos;m Muhammad Fiaz—a passionate full-stack developer and SaaS enthusiast dedicated to building modern, scalable web applications. With a strong foundation in TypeScript, React, and Next.js, I thrive on transforming ideas into beautiful, performant products that delight users and drive business growth.
+            Hi, I&apos;m Parvez Hossain—a passionate full-stack developer and SaaS enthusiast dedicated to building modern, scalable web applications. With a strong foundation in TypeScript, React, and Next.js, I thrive on transforming ideas into beautiful, performant products that delight users and drive business growth.
           </p>
           <p className="text-muted-foreground leading-relaxed">
             My journey in tech began with a curiosity for how things work and a drive to solve real-world problems. Over the years, I&apos;ve collaborated with startups and global teams, delivering robust solutions in e-commerce, productivity, and developer tooling. I believe in clean code, thoughtful design, and continuous learning.

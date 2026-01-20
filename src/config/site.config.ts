@@ -56,15 +56,15 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  siteName: 'Muhammad Fiaz',
-  domain: 'muhammadfiaz.com',
-  author: 'Muhammad Fiaz',
+  siteName: 'Parvez Hossain',
+  domain: 'parvezdev.com',
+  author: 'Parvez Hossain',
   description: 'Full Stack developer creating useful & delightful web experiences. Exploring ML & AI.',
   about:
     'I am a Full Stack developer who loves creating new things. I spend my spare time building free apps & tools, and I am currently diving into Machine Learning & AI to expand my problem‑solving toolkit. Always open to collaboration & new challenges.',
-    author_img: 'https://avatars.githubusercontent.com/u/75434191?v=4',
+    author_img: 'https://avatars.githubusercontent.com/u/parvezhossainme?v=4',
     keywords: [
-    'Muhammad Fiaz',
+    'Parvez Hossain',
     'Full Stack Developer',
     'Portfolio',
     'Next.js',
@@ -76,24 +76,24 @@ export const siteConfig: SiteConfig = {
     'AI'
   ],
   ogImage: '/og.png',
-  twitterHandle: '@muhammadfiaz_',
+  twitterHandle: '@parvezhossain',
 
   theme: {
     default: 'dark',
     allowSystem: true,
   },
   links: {
-    website: 'https://muhammadfiaz.com',
-    github: 'https://github.com/muhammad-fiaz',
-    linkedin: 'https://www.linkedin.com/feed/',
-    tips: 'https://pay.muhammadfiaz.com',
-    email: 'mailto:contact@muhammadfiaz.com',
+    website: 'https://parvezdev.com',
+    github: 'https://github.com/parvezhossainme',
+    linkedin: 'https://www.linkedin.com/in/parvezhossain/',
+    tips: 'https://pay.parvezdev.com',
+    email: 'mailto:parvezhossainme@gmail.com',
   },
   social: [
-    { label: 'GitHub', url: 'https://github.com/muhammad-fiaz', icon: 'github' },
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/feed/', icon: 'linkedin' },
-    { label: 'Website', url: 'https://muhammadfiaz.com', icon: 'globe' },
-    { label: 'Tip', url: 'https://pay.muhammadfiaz.com', icon: 'coffee' },
+    { label: 'GitHub', url: 'https://github.com/parvezhossainme', icon: 'github' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/parvezhossain/', icon: 'linkedin' },
+    { label: 'Website', url: 'https://parvezdev.com', icon: 'globe' },
+    { label: 'Tip', url: 'https://pay.parvezdev.com', icon: 'coffee' },
   ],
   navigation: [
     { label: 'Home', href: '/' },
@@ -106,10 +106,10 @@ export const siteConfig: SiteConfig = {
 
   
   seo: {
-    title: 'Muhammad Fiaz',
+    title: 'Parvez Hossain',
     description: 'Full Stack developer creating useful & delightful web experiences. Exploring ML & AI.',
     keywords: [
-      'Muhammad Fiaz',
+      'Parvez Hossain',
       'Full Stack Developer',
       'Portfolio',
       'Next.js',
@@ -120,9 +120,9 @@ export const siteConfig: SiteConfig = {
       'Machine Learning',
       'AI'
     ],
-    canonical: 'https://muhammadfiaz.com',
+    canonical: 'https://parvezdev.com',
     image: '/og.png',
-    imageAlt: "Muhammad Fiaz - Full Stack Developer",
+    imageAlt: "Parvez Hossain - Full Stack Developer",
     locale: 'en-US',
     type: 'website',
     twitterCard: 'summary_large_image',
