@@ -1,39 +1,4 @@
-Main: https://github.com/parvezhossainme/portfolio/ [thanks]
-
 Thank you for your interest in my portfolio project! 🎉
-
-**This repository ([portfolio V4](https://github.com/parvezhossainme/portfolio)) is the latest version and is still in active development.**
-
-Due to the amazing support, feedback, and requests from the community, I have decided to continue developing and improving this project. Your encouragement and enthusiasm have made a big impact!
-
-I'm currently building my portfolio with Next.js (V4), and side-by-side, I'm also working on my Astro V3 portfolio version:
-👉 [parvezhossainme/website (Astro V3)](https://github.com/parvezhossainme/website)
-
-### What does this mean for you?
-- **You are welcome to use, fork, or reference this V4 portfolio for your own learning or projects.**
-- The repo will remain public and actively maintained for the community.
-- All features, code, and documentation are now fully accessible.
-
-### Looking for the Astro version?
-Check out my Astro V3 portfolio work:
-🔗 [https://github.com/parvezhossainme/website](https://github.com/parvezhossainme/website)
-
-### Thank you!
-Thanks to everyone who starred, contributed, or offered feedback on previous versions.  
-Your support has been invaluable and I look forward to sharing even more with V4 (Next.js) and V3 (Astro)!
-
----
-
-**Stay tuned for more updates and features in Portfolio V3! 🚀**
-
-
-# About This Project
-
-This project is built with Next.js and React, showcasing [Parvez Hossain](https://github.com/parvezhossainme/)'s [personal website](https://parvezdev.com/).
-
-**Feel free to use this project for your portfolio or as a project reference. If you find it helpful, don't forget to give it a ⭐️ to show your support. [Fork this repo](https://github.com/parvezhossainme/portfolio/fork) if you want to contribute✨**
-
-**Support this non-profit open-source project with a little [sponsor ❤️](https://github.com/sponsors/parvezhossainme) or [Buy Me a Coffee ☕](https://buymecoffee.com/parvezhossainme).**
 
 ## Table of Contents
 
@@ -57,13 +22,6 @@ This project is built with Next.js and React, showcasing [Parvez Hossain](https:
   - [Stay Connected!](#stay-connected)
     - [Happy Coding! 😊](#happy-coding-)
 
-### Release Notes
-
-For a detailed list of releases and changes, please visit the [GitHub Releases page](https://github.com/parvezhossainme/portfolio/releases).
-
-You can also refer to the [CHANGELOG.md](./CHANGELOG.md) file for comprehensive information about each release.
-
-if you have any suggestions or feedback, feel free to open an [issue](https://github.com/parvezhossainme/portfolio/issues) or a [pull request](https://github.com/parvezhossainme/portfolio/pulls).
 
 ## Getting Started
 
