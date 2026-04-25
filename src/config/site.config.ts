@@ -100,6 +100,7 @@ export const siteConfig: SiteConfig = {
     { label: 'About', href: '/about' },
     { label: 'Projects', href: '/projects' },
     { label: 'Posts', href: '/posts' },
+    { label: 'URL Short', href: '/url-short' },
     { label: 'Chat', href: '/chat' },
     { label: 'Contact', href: '/contact' }
   ],
