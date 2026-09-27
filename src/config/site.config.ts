@@ -14,6 +14,14 @@ export type NavItem = {
   external?: boolean;
 };
 
+export type ToolItem = {
+  label: string;
+  href: string;
+  description: string;
+  icon?: string;
+  external?: boolean;
+};
+
 export interface SiteConfig {
   siteName: string;
   domain: string;
@@ -39,6 +47,7 @@ export interface SiteConfig {
   };
   social: SocialLink[];
   navigation: NavItem[];
+  tools: ToolItem[];
   seo: {
   title: string;
   description: string;
@@ -100,10 +109,45 @@ export const siteConfig: SiteConfig = {
     { label: 'About', href: '/about' },
     { label: 'Projects', href: '/projects' },
     { label: 'Posts', href: '/posts' },
-    { label: 'Avro Pad', href: '/avro-pad' },
-    { label: 'URL Short', href: '/url-short' },
     { label: 'Chat', href: '/chat' },
     { label: 'Contact', href: '/contact' }
+  ],
+
+  tools: [
+    {
+      label: 'Avro Pad',
+      href: '/avro-pad',
+      description: 'Type Bangla phonetically in your browser',
+      icon: 'keyboard',
+    },
+    {
+      label: 'URL Shortener',
+      href: 'https://url.parvezhossainme.com',
+      description: 'Create short links and QR codes',
+      icon: 'link',
+      external: true,
+    },
+    {
+      label: 'Markdown',
+      href: 'https://md.parvezhossainme.com',
+      description: 'Write and preview Markdown',
+      icon: 'fileText',
+      external: true,
+    },
+    {
+      label: 'Share',
+      href: 'https://share.parvezhossainme.com',
+      description: 'Share files and snippets with a link',
+      icon: 'share',
+      external: true,
+    },
+    {
+      label: 'Notes',
+      href: 'https://notes-phme.web.app',
+      description: 'Capture and organize your notes',
+      icon: 'notebook',
+      external: true,
+    },
   ],
 
   

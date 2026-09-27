@@ -4,7 +4,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, useScroll, useMotionValueEvent } from 'motion/react';
-import { Menu, X, Github, Linkedin, Globe, Coffee } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Globe, Coffee, Wrench, Keyboard, Link2, ChevronDown, ExternalLink, FileText, Share2, NotebookPen } from 'lucide-react';
 
 import { siteConfig } from '@/config/site.config';
 import { cn } from '@/lib/utils';
@@ -12,6 +12,14 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { ThemeToggle } from './theme-toggle';
 
 const iconMap = {
@@ -19,10 +27,19 @@ const iconMap = {
   linkedin: Linkedin,
   globe: Globe,
   coffee: Coffee,
+  wrench: Wrench,
+  keyboard: Keyboard,
+  link: Link2,
+  fileText: FileText,
+  share: Share2,
+  notebook: NotebookPen,
 };
 
 export function Navbar() {
   const pathname = usePathname();
+  const isToolsActive = siteConfig.tools.some(
+    (tool) => !tool.external && pathname.startsWith(tool.href)
+  );
   const [isOpen, setIsOpen] = React.useState(false);
   const [isVisible, setIsVisible] = React.useState(true);
   const { scrollY } = useScroll();
@@ -104,6 +121,70 @@ export function Navbar() {
                 </Link>
               </motion.div>
             ))}
+
+            {/* Tools Dropdown */}
+            <motion.div
+              whileHover={{ y: -3 }}
+              whileFocus={{ y: -3 }}
+              transition={{ type: 'spring', stiffness: 500, damping: 18 }}
+              className="inline-block"
+            >
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    type="button"
+                    className={cn(
+                      'group/trigger flex items-center gap-1 rounded px-3 py-2 text-sm font-medium outline-none transition-colors hover:text-foreground/80 focus-visible:text-foreground/80',
+                      isToolsActive ? 'text-foreground' : 'text-foreground/60'
+                    )}
+                  >
+                    <Wrench className="h-3.5 w-3.5" />
+                    Tools
+                    <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-data-[state=open]/trigger:rotate-180" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-72">
+                  <DropdownMenuLabel>Tools</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  {siteConfig.tools.map((tool) => {
+                    const Icon = tool.icon
+                      ? iconMap[tool.icon as keyof typeof iconMap]
+                      : Wrench;
+
+                    const content = (
+                      <>
+                        <Icon className="size-4 shrink-0" />
+                        <span className="flex flex-col gap-0.5">
+                          <span className="font-medium">{tool.label}</span>
+                          <span className="text-xs text-muted-foreground">
+                            {tool.description}
+                          </span>
+                        </span>
+                        {tool.external && (
+                          <ExternalLink className="ml-auto size-3.5 shrink-0 opacity-60" />
+                        )}
+                      </>
+                    );
+
+                    return (
+                      <DropdownMenuItem
+                        key={tool.href}
+                        asChild
+                        className="items-start gap-3 py-2"
+                      >
+                        {tool.external ? (
+                          <a href={tool.href} target="_blank" rel="noopener noreferrer">
+                            {content}
+                          </a>
+                        ) : (
+                          <Link href={tool.href}>{content}</Link>
+                        )}
+                      </DropdownMenuItem>
+                    );
+                  })}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </motion.div>
         </nav>
 
         {/* Actions */}
@@ -175,6 +256,60 @@ export function Navbar() {
                     </Link>
                   ))}
                 </nav>
+
+                <Separator />
+
+                {/* Tools */}
+                <div className="space-y-3">
+                  <h3 className="text-sm font-semibold">Tools</h3>
+                  <div className="space-y-1">
+                    {siteConfig.tools.map((tool) => {
+                      const Icon = tool.icon
+                        ? iconMap[tool.icon as keyof typeof iconMap]
+                        : Wrench;
+
+                      const content = (
+                        <>
+                          <Icon className="h-4 w-4 shrink-0" />
+                          <span className="flex flex-col">
+                            <span className="font-medium">{tool.label}</span>
+                            <span className="text-xs text-muted-foreground">
+                              {tool.description}
+                            </span>
+                          </span>
+                          {tool.external && (
+                            <ExternalLink className="ml-auto h-3.5 w-3.5 shrink-0 opacity-60" />
+                          )}
+                        </>
+                      );
+
+                      const itemClass =
+                        'flex items-start gap-3 rounded-md px-3 py-2 text-sm font-medium text-foreground/60 transition-colors hover:bg-accent hover:text-accent-foreground';
+
+                      return tool.external ? (
+                        <a
+                          key={tool.href}
+                          href={tool.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setIsOpen(false)}
+                          className={itemClass}
+                        >
+                          {content}
+                        </a>
+                      ) : (
+                        <Link
+                          key={tool.href}
+                          href={tool.href}
+                          onClick={() => setIsOpen(false)}
+                          className={itemClass}
+                        >
+                          {content}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
 
                 <Separator />
 

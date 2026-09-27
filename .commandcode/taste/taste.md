@@ -1,0 +1,4 @@
+- Prefers the agent to explore and understand the existing project (structure, tech stack, routes, data layer) before starting work on it. Confidence: 0.5
+- Prefers multiple small tools/utilities to be consolidated behind a single "Tools" menu entry (button/dropdown) in the navigation rather than listed as separate top-level nav items. Confidence: 0.7
+- When a feature can be served by an external separate subdomain he already runs, prefers removing the in-app implementation and linking out to that subdomain instead of maintaining a duplicate. Tends to run a suite of self-hosted tools on subdomains (e.g. url., md., share.parvezhossainme.com) plus external Firebase-hosted apps, and wants these surfaced as links rather than rebuilt in-app. Confidence: 0.65
+- Gives terse, minimal instructions for additions (just names/URLs) and expects the agent to infer sensible labels, descriptions, and icons on its own, then flag the inferences. Confidence: 0.45
