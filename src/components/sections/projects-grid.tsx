@@ -13,7 +13,6 @@ import {
   Calendar,
 
   AlertCircle,
-  Search,
   X
 } from 'lucide-react';
 import Link from 'next/link';
@@ -90,13 +89,13 @@ export function ProjectsGrid() {
       <div className="mb-6">
         {/* Centered Search Bar with icon, like PostsSearch */}
         <div className="relative max-w-md mx-auto mb-2">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 text-muted-foreground transform -translate-y-1/2 transition-colors" />
+          <span className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 font-mono text-sm text-primary">&gt;</span>
           <Input
             type="text"
             placeholder="Search projects..."
             value={search}
             onChange={e => setSearch(e.target.value)}
-            className="pl-10 bg-background/50 backdrop-blur-sm border-border/60 focus:border-primary/50"
+            className="pl-8"
             disabled
           />
         </div>
@@ -112,9 +111,9 @@ export function ProjectsGrid() {
         {/* Skeleton grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {Array.from({ length: 8 }).map((_, i) => (
-            <Card key={i} className="group h-full min-h-[420px] flex flex-col flex-1 overflow-hidden border-0 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-xl">
-              <div className="relative h-32 w-full overflow-hidden mb-2">
-                <div className="animate-pulse bg-muted w-full h-full rounded-t-xl" />
+            <Card key={i} variant="terminal" className="h-full min-h-[420px] flex-1 overflow-hidden">
+              <div className="relative mb-2 h-32 w-full overflow-hidden">
+                <div className="h-full w-full animate-pulse bg-muted" />
               </div>
               <CardHeader className="relative space-y-4 flex-1">
                 <div className="space-y-2 flex-1">
@@ -151,8 +150,8 @@ export function ProjectsGrid() {
       <div className="flex items-center justify-center min-h-[400px]">
         <div className="text-center space-y-4">
           <AlertCircle className="h-12 w-12 text-destructive mx-auto" />
-          <h3 className="text-lg font-semibold">Unable to load projects</h3>
-          <p className="text-muted-foreground">{error}</p>
+          <h3 className="font-display text-lg font-bold uppercase tracking-wide">Unable to load projects</h3>
+          <p className="text-muted-foreground font-mono text-sm">{error}</p>
           <Button 
             onClick={() => window.location.reload()} 
             variant="outline"
@@ -171,25 +170,25 @@ export function ProjectsGrid() {
       <div className="mb-6">
         {/* Centered Search Bar with icon, like PostsSearch */}
         <div className="relative max-w-md mx-auto mb-2">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 text-muted-foreground transform -translate-y-1/2 transition-colors" />
+          <span className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 font-mono text-sm text-primary">&gt;</span>
           <Input
             type="text"
             placeholder="Search projects..."
             value={search}
             onChange={e => setSearch(e.target.value)}
-            className="pl-10 bg-background/50 backdrop-blur-sm border-border/60 focus:border-primary/50"
+            className="pl-8"
           />
         </div>
         <div className="flex sm:hidden justify-between items-center mb-2">
           <button
-            className="px-4 py-2 rounded-full border text-xs font-medium transition-colors bg-primary text-primary-foreground border-border"
+            className="cyber-chamfer-sm px-4 py-2 border border-border font-mono text-xs font-medium uppercase tracking-wider transition-colors bg-primary text-primary-foreground border-border"
             onClick={() => setShowTags((v) => !v)}
             aria-label="Toggle tags filter"
           >
             {showTags ? 'Hide Tags' : 'Show Tags'}
           </button>
           <button
-            className={`px-4 py-2 rounded-full border text-xs font-medium transition-colors ${selectedTopic === null ? 'bg-background text-foreground' : 'bg-primary text-primary-foreground'} border-border`}
+            className={`cyber-chamfer-sm px-4 py-2 border border-border font-mono text-xs font-medium uppercase tracking-wider transition-colors ${selectedTopic === null ? 'bg-background text-foreground' : 'bg-primary text-primary-foreground'} border-border`}
             onClick={() => setSelectedTopic(null)}
           >
             Clear Filter
@@ -225,14 +224,14 @@ export function ProjectsGrid() {
         {/* Desktop: tag bar, left aligned, only show once */}
         <div className="hidden sm:flex flex-wrap items-center gap-3 mt-4 justify-start">
           <button
-            className="px-4 py-2 rounded-full border text-xs font-medium transition-colors bg-primary text-primary-foreground border-border"
+            className="cyber-chamfer-sm px-4 py-2 border border-border font-mono text-xs font-medium uppercase tracking-wider transition-colors bg-primary text-primary-foreground border-border"
             onClick={() => setShowTags((v) => !v)}
             aria-label="Toggle tags filter desktop"
           >
             {showTags ? 'Hide Tags' : 'Show Tags'}
           </button>
           <button
-            className={`px-4 py-2 rounded-full border text-xs font-medium transition-colors ${selectedTopic === null ? 'bg-background text-foreground' : 'bg-primary text-primary-foreground'} border-border`}
+            className={`cyber-chamfer-sm px-4 py-2 border border-border font-mono text-xs font-medium uppercase tracking-wider transition-colors ${selectedTopic === null ? 'bg-background text-foreground' : 'bg-primary text-primary-foreground'} border-border`}
             onClick={() => setSelectedTopic(null)}
           >
             Clear Filter
@@ -263,7 +262,7 @@ export function ProjectsGrid() {
         {/* Active Filters */}
         {(search || selectedTopic) && (
           <div className="flex flex-wrap items-center gap-2 mt-2 justify-start">
-            <span className="text-sm text-muted-foreground">Active filters:</span>
+            <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Active filters:</span>
             {search && (
               <Badge variant="secondary" className="text-xs">
                 Search: &quot;{search}&quot;
@@ -287,8 +286,8 @@ export function ProjectsGrid() {
             transition={{ duration: 0.6, delay: index * 0.1 }}
             className="h-full flex flex-col"
           >
-            <Card className="group h-full min-h-[420px] flex flex-col flex-1 overflow-hidden border-0 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <Card variant="terminal" className="group h-full min-h-[420px] flex-1 overflow-hidden hover:-translate-y-1 hover:[--chamfer-edge:var(--neon)] hover:cyber-glow-sm">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-neon-secondary/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               {/* Always show preview image for all repos */}
               <div className="relative h-32 w-full overflow-hidden mb-2">
                 <Image
@@ -296,7 +295,7 @@ export function ProjectsGrid() {
                   alt={project.name}
                   width={400}
                   height={128}
-                  className="object-cover w-full h-full rounded-t-xl"
+                  className="h-full w-full object-cover"
                   priority={index < 4}
                   unoptimized
                 />
@@ -318,8 +317,9 @@ export function ProjectsGrid() {
                 </div>
                 {project.language && (
                   <div className="flex items-center gap-2">
-                    <div 
-                      className={`h-3 w-3 rounded-full bg-[${getLanguageColor(project.language)}]`}
+                    <div
+                      className="size-3 rounded-full"
+                      style={{ backgroundColor: getLanguageColor(project.language) }}
                     />
                     <span className="text-sm text-muted-foreground">{project.language}</span>
                   </div>

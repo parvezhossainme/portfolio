@@ -93,9 +93,9 @@ export function PostsGrid() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
           {Array.from({ length: 8 }).map((_, i) => (
             <div key={i} className="h-full">
-              <div className="group h-full overflow-hidden border border-border bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-xl flex flex-col">
+              <div className="cyber-chamfer group flex h-full flex-col overflow-hidden bg-card">
                 <div className="relative h-48 w-full overflow-hidden">
-                  <Skeleton className="absolute inset-0 w-full h-full object-cover rounded-t-xl" />
+                  <Skeleton className="absolute inset-0 h-full w-full object-cover" />
                   <div className="absolute top-3 right-3">
                     <Skeleton className="h-6 w-20 rounded-full" />
                   </div>
@@ -129,8 +129,8 @@ export function PostsGrid() {
       <div className="flex items-center justify-center min-h-[400px]">
         <div className="text-center space-y-4">
           <AlertCircle className="h-12 w-12 text-destructive mx-auto" />
-          <h3 className="text-lg font-semibold">Unable to load articles</h3>
-          <p className="text-muted-foreground">{error}</p>
+          <h3 className="font-display text-lg font-bold uppercase tracking-wide">Unable to load articles</h3>
+          <p className="text-muted-foreground font-mono text-sm">{error}</p>
           <Button 
             onClick={() => window.location.reload()} 
             variant="outline"
@@ -150,14 +150,14 @@ export function PostsGrid() {
         {/* Mobile: collapse toggle */}
         <div className="flex sm:hidden justify-between items-center mb-2">
           <button
-            className="px-4 py-2 rounded-full border text-xs font-medium transition-colors bg-primary text-primary-foreground border-border"
+            className="cyber-chamfer-sm px-4 py-2 border border-border font-mono text-xs font-medium uppercase tracking-wider transition-colors bg-primary text-primary-foreground border-border"
             onClick={() => setShowTags((v) => !v)}
             aria-label="Toggle tags filter"
           >
             {showTags ? 'Hide Tags' : 'Show Tags'}
           </button>
           <button
-            className={`px-4 py-2 rounded-full border text-xs font-medium transition-colors ${selectedTag === null ? 'bg-background text-foreground' : 'bg-primary text-primary-foreground'} border-border`}
+            className={`cyber-chamfer-sm px-4 py-2 border border-border font-mono text-xs font-medium uppercase tracking-wider transition-colors ${selectedTag === null ? 'bg-background text-foreground' : 'bg-primary text-primary-foreground'} border-border`}
             onClick={() => setSelectedTag(null)}
           >
             All
@@ -169,7 +169,7 @@ export function PostsGrid() {
             {allTags.map((tag) => (
               <button
                 key={tag}
-                className={`px-4 py-2 rounded-full border text-xs font-medium transition-colors ${selectedTag === tag ? 'bg-primary text-primary-foreground' : 'bg-background text-foreground hover:bg-muted'} border-border`}
+                className={`cyber-chamfer-sm px-4 py-2 border border-border font-mono text-xs font-medium uppercase tracking-wider transition-colors ${selectedTag === tag ? 'bg-primary text-primary-foreground' : 'bg-background text-foreground hover:bg-muted'} border-border`}
                 onClick={() => setSelectedTag(tag)}
               >
                 {tag}
@@ -180,14 +180,14 @@ export function PostsGrid() {
         {/* Desktop: collapse/expand toggle */}
         <div className="hidden sm:flex flex-wrap gap-2 items-center">
           <button
-            className="px-4 py-2 rounded-full border text-xs font-medium transition-colors bg-primary text-primary-foreground border-border"
+            className="cyber-chamfer-sm px-4 py-2 border border-border font-mono text-xs font-medium uppercase tracking-wider transition-colors bg-primary text-primary-foreground border-border"
             onClick={() => setShowDesktopTags((v) => !v)}
             aria-label="Toggle tags filter desktop"
           >
             {showDesktopTags ? 'Hide Tags' : 'Show Tags'}
           </button>
           <button
-            className={`px-4 py-2 rounded-full border text-xs font-medium transition-colors ${selectedTag === null ? 'bg-background text-foreground' : 'bg-primary text-primary-foreground'} border-border`}
+            className={`cyber-chamfer-sm px-4 py-2 border border-border font-mono text-xs font-medium uppercase tracking-wider transition-colors ${selectedTag === null ? 'bg-background text-foreground' : 'bg-primary text-primary-foreground'} border-border`}
             onClick={() => setSelectedTag(null)}
           >
             All
@@ -195,7 +195,7 @@ export function PostsGrid() {
           {showDesktopTags && allTags.map((tag) => (
             <button
               key={tag}
-              className={`px-4 py-2 rounded-full border text-xs font-medium transition-colors ${selectedTag === tag ? 'bg-primary text-primary-foreground' : 'bg-background text-foreground hover:bg-muted'} border-border`}
+              className={`cyber-chamfer-sm px-4 py-2 border border-border font-mono text-xs font-medium uppercase tracking-wider transition-colors ${selectedTag === tag ? 'bg-primary text-primary-foreground' : 'bg-background text-foreground hover:bg-muted'} border-border`}
               onClick={() => setSelectedTag(tag)}
             >
               {tag}
@@ -214,8 +214,8 @@ export function PostsGrid() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="h-full flex flex-col"
             >
-              <Card className="group h-full min-h-[420px] flex flex-col flex-1 overflow-hidden border-0 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Card variant="terminal" className="group h-full min-h-[420px] flex-1 overflow-hidden hover:-translate-y-1 hover:[--chamfer-edge:var(--neon)] hover:cyber-glow-sm">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-neon-secondary/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 {/* Cover Image */}
                 {post.coverImage && (
                   <div className="relative h-48 overflow-hidden">
@@ -225,7 +225,7 @@ export function PostsGrid() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
                     {/* Source Badge */}
                     <div className="absolute top-3 right-3">
                       <Badge 

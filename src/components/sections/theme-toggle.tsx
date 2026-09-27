@@ -14,11 +14,11 @@ interface ThemeToggleProps {
   showLabel?: boolean;
 }
 
-export function ThemeToggle({ 
-  variant = 'ghost', 
-  size = 'sm', 
+export function ThemeToggle({
+  variant = 'ghost',
+  size = 'sm',
   className,
-  showLabel = false 
+  showLabel = false
 }: ThemeToggleProps) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
@@ -31,15 +31,11 @@ export function ThemeToggle({
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
+  const base = cn('relative tracking-normal', showLabel ? '' : 'h-9 w-9 p-0', className);
+
   if (!mounted) {
     return (
-      <Button
-        variant={variant}
-        size={size}
-        className={cn(showLabel ? '' : 'h-8 w-8 p-0', className)}
-        disabled
-        aria-label="Toggle theme"
-      >
+      <Button variant={variant} size={size} className={base} disabled aria-label="Toggle theme">
         <Sun className="h-4 w-4" />
         {showLabel && <span className="ml-2">Theme</span>}
       </Button>
@@ -51,7 +47,7 @@ export function ThemeToggle({
       variant={variant}
       size={size}
       onClick={toggleTheme}
-      className={cn(showLabel ? '' : 'h-8 w-8 p-0', className)}
+      className={base}
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
     >
       <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

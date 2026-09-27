@@ -173,7 +173,7 @@ export const siteConfig: SiteConfig = {
     type: 'website',
     twitterCard: 'summary_large_image',
     robots: 'index,follow',
-    themeColor: '#0f172a',
+    themeColor: '#0a0a0f',
   },
 
 };

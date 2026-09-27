@@ -1,20 +1,16 @@
-/* Navbar underline color for theme-aware animation */
-.navbar-underline {
-  --navbar-underline: black;
-}
-.dark .navbar-underline {
-  --navbar-underline: white;
-}
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "../styles/cyber.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-jetbrains-mono);
+  --font-mono: var(--font-share-tech-mono);
+  --font-display: var(--font-orbitron);
+  --font-accent: var(--font-share-tech-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -44,79 +40,99 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --color-neon: var(--neon);
+  --color-neon-secondary: var(--neon-secondary);
+  --color-neon-tertiary: var(--neon-tertiary);
+  --radius: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-flicker: flicker 4s linear infinite;
+  --animate-scan: scan 6s linear infinite;
+  --animate-rgb-shift: rgbShift 4s steps(2) infinite;
+  --animate-glitch: glitch 3.2s steps(1) infinite;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
 }
 
+/* Light — "clean terminal" variant */
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  color-scheme: light;
+  --background: #f5f5f8;
+  --foreground: #0a0a0f;
+  --card: #ffffff;
+  --card-foreground: #0a0a0f;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0f;
+  --primary: #00a05a;
+  --primary-foreground: #f5f5f8;
+  --secondary: #e7e7ef;
+  --secondary-foreground: #0a0a0f;
+  --muted: #e7e7ef;
+  --muted-foreground: #5a5a6b;
+  --accent: #e7e7ef;
+  --accent-foreground: #00814a;
+  --destructive: #d81c4c;
+  --border: #c9c9d6;
+  --input: #ffffff;
+  --ring: #00a05a;
+  --neon: #00a05a;
+  --neon-secondary: #c200a8;
+  --neon-tertiary: #007fa8;
+  --chart-1: #00a05a;
+  --chart-2: #007fa8;
+  --chart-3: #c200a8;
+  --chart-4: #b8860b;
+  --chart-5: #d81c4c;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0a0a0f;
+  --sidebar-primary: #00a05a;
+  --sidebar-primary-foreground: #f5f5f8;
+  --sidebar-accent: #e7e7ef;
+  --sidebar-accent-foreground: #0a0a0f;
+  --sidebar-border: #c9c9d6;
+  --sidebar-ring: #00a05a;
 }
 
+/* Dark — the cyberpunk void (default) */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  color-scheme: dark;
+  --background: #0a0a0f;
+  --foreground: #e0e0e0;
+  --card: #12121a;
+  --card-foreground: #e0e0e0;
+  --popover: #12121a;
+  --popover-foreground: #e0e0e0;
+  --primary: #00ff88;
+  --primary-foreground: #0a0a0f;
+  --secondary: #1c1c2e;
+  --secondary-foreground: #e0e0e0;
+  --muted: #1c1c2e;
+  --muted-foreground: #6b7280;
+  --accent: #1c1c2e;
+  --accent-foreground: #00ff88;
+  --destructive: #ff3366;
+  --border: #2a2a3a;
+  --input: #12121a;
+  --ring: #00ff88;
+  --neon: #00ff88;
+  --neon-secondary: #ff00ff;
+  --neon-tertiary: #00d4ff;
+  --chart-1: #00ff88;
+  --chart-2: #00d4ff;
+  --chart-3: #ff00ff;
+  --chart-4: #ffd400;
+  --chart-5: #ff3366;
+  --sidebar: #12121a;
+  --sidebar-foreground: #e0e0e0;
+  --sidebar-primary: #00ff88;
+  --sidebar-primary-foreground: #0a0a0f;
+  --sidebar-accent: #1c1c2e;
+  --sidebar-accent-foreground: #00ff88;
+  --sidebar-border: #2a2a3a;
+  --sidebar-ring: #00ff88;
 }
 
 @layer base {
@@ -143,4 +159,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  ::selection {
+    background: color-mix(in oklab, var(--neon) 30%, transparent);
+    color: var(--foreground);
+  }
+}
+
+/* Navbar underline follows the neon accent in both themes */
+.navbar-underline {
+  --navbar-underline: var(--neon);
 }

@@ -8,19 +8,14 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/
 
 export default function ContactCard() {
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      {/* animated subtle background behind the card */}
-      <motion.div
-        className="absolute inset-0 -z-10 rounded-2xl"
-        transition={{ duration: 12, repeat: Infinity, repeatType: 'mirror' }}
-        aria-hidden
-      />
-
+    <div className="relative mx-auto w-full max-w-4xl">
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <Card>
+        <Card variant="holographic">
           <CardHeader>
-            <CardTitle className="text-2xl sm:text-3xl">Contact Me</CardTitle>
-            <p className="mt-1 text-sm text-muted-foreground">Tell me about your project or ask a question </p>
+            <CardTitle className="text-primary uppercase">Contact Me</CardTitle>
+            <p className="mt-1 font-mono text-sm text-muted-foreground">
+              <span className="text-primary">&gt;</span> Tell me about your project or ask a question
+            </p>
           </CardHeader>
 
           <CardContent>
@@ -28,7 +23,9 @@ export default function ContactCard() {
               <ContactForm />
             </div>
 
-            <h3 className="mt-6 mb-3 text-lg sm:text-xl font-medium">FAQ</h3>
+            <h3 className="mt-6 mb-3 font-mono text-sm font-medium tracking-[0.3em] text-primary uppercase">
+              FAQ
+            </h3>
             <Accordion type="single" collapsible>
               <AccordionItem value="faq-1">
                 <AccordionTrigger>How long will it take to hear a reply from you?</AccordionTrigger>

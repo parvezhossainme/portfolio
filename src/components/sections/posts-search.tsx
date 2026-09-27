@@ -46,15 +46,18 @@ export function PostsSearch({ onSearch, onTagFilter }: PostsSearchProps = {}) {
       className="mb-12 space-y-6"
     >
       {/* Search Bar */}
-      <div className="relative max-w-md mx-auto">
-  <Search className="absolute left-3 top-1/2 h-4 w-4 text-muted-foreground transform -translate-y-1/2 transition-colors" />
+      <div className="relative mx-auto max-w-md">
+        <span className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 font-mono text-sm text-primary">
+          &gt;
+        </span>
         <Input
           type="text"
           placeholder="Search articles..."
           value={searchQuery}
           onChange={(e) => handleSearch(e.target.value)}
-          className="pl-10 bg-background/50 backdrop-blur-sm border-border/60 focus:border-primary/50"
+          className="pl-8"
         />
+        <Search className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
       </div>
 
       {/* Tag Filters (dynamic, if tags are provided) */}
@@ -66,7 +69,6 @@ export function PostsSearch({ onSearch, onTagFilter }: PostsSearchProps = {}) {
               variant={selectedTag === tag ? "default" : "outline"}
               size="sm"
               onClick={() => handleTagClick(tag)}
-              className="text-xs h-7"
             >
               {tag}
             </Button>
@@ -76,9 +78,8 @@ export function PostsSearch({ onSearch, onTagFilter }: PostsSearchProps = {}) {
               variant="ghost"
               size="sm"
               onClick={clearFilters}
-              className="text-xs h-7 text-muted-foreground hover:text-foreground"
             >
-              <X className="h-3 w-3 mr-1" />
+              <X className="h-3 w-3" />
               Clear
             </Button>
           )}
@@ -88,14 +89,16 @@ export function PostsSearch({ onSearch, onTagFilter }: PostsSearchProps = {}) {
       {/* Active Filters */}
       {(searchQuery || selectedTag) && (
         <div className="flex flex-wrap items-center justify-center gap-2">
-          <span className="text-sm text-muted-foreground">Active filters:</span>
+          <span className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
+            Active filters:
+          </span>
           {searchQuery && (
-            <Badge variant="secondary" className="text-xs">
+            <Badge variant="secondary">
               Search: &quot;{searchQuery}&quot;
             </Badge>
           )}
           {selectedTag && (
-            <Badge variant="secondary" className="text-xs">
+            <Badge variant="secondary">
               Tag: {selectedTag}
             </Badge>
           )}

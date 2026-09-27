@@ -1,0 +1,265 @@
+/* ==========================================================================
+   Cyberpunk / Glitch effect layer
+   Imported from src/app/globals.css. Utilities are framework-native so they
+   compose with Tailwind variants (hover:, focus-visible:, md:, etc.).
+   ========================================================================== */
+
+/* --- Circuit / grid backdrop ------------------------------------------- */
+@utility cyber-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--neon) 4%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--neon) 4%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 50px 50px;
+}
+
+@utility cyber-grid-fade {
+  mask-image: radial-gradient(
+    ellipse 75% 60% at 50% 0%,
+    #000 45%,
+    transparent 100%
+  );
+}
+
+/* --- Chamfered corners (hard 45deg cuts) ------------------------------- */
+@utility cyber-chamfer {
+  --chamfer: 12px;
+  position: relative;
+  clip-path: polygon(
+    0 var(--chamfer),
+    var(--chamfer) 0,
+    calc(100% - var(--chamfer)) 0,
+    100% var(--chamfer),
+    100% calc(100% - var(--chamfer)),
+    calc(100% - var(--chamfer)) 100%,
+    var(--chamfer) 100%,
+    0 calc(100% - var(--chamfer))
+  );
+}
+
+@utility cyber-chamfer-sm {
+  --chamfer: 6px;
+  position: relative;
+  clip-path: polygon(
+    0 var(--chamfer),
+    var(--chamfer) 0,
+    calc(100% - var(--chamfer)) 0,
+    100% var(--chamfer),
+    100% calc(100% - var(--chamfer)),
+    calc(100% - var(--chamfer)) 100%,
+    var(--chamfer) 100%,
+    0 calc(100% - var(--chamfer))
+  );
+}
+
+/* 1px border that follows the chamfer, drawn as a masked ring on ::before.
+   Tint via `--chamfer-edge`. Because the border lives outside the clipped
+   paint, we mask the padding-box minus the content-box. */
+@utility cyber-edge {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: var(--chamfer-edge-w, 1px);
+    background: var(--chamfer-edge, var(--border));
+    clip-path: inherit;
+    -webkit-mask: linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* --- Neon glow (post-clip drop-shadow follows the chamfered silhouette) */
+@utility cyber-glow-sm {
+  filter: drop-shadow(
+    0 0 3px color-mix(in oklab, var(--neon) 55%, transparent)
+  );
+}
+
+@utility cyber-glow {
+  filter: drop-shadow(0 0 5px color-mix(in oklab, var(--neon) 70%, transparent))
+    drop-shadow(0 0 14px color-mix(in oklab, var(--neon) 35%, transparent));
+}
+
+@utility cyber-glow-secondary {
+  filter: drop-shadow(
+      0 0 5px color-mix(in oklab, var(--neon-secondary) 70%, transparent)
+    )
+    drop-shadow(
+      0 0 14px color-mix(in oklab, var(--neon-secondary) 35%, transparent)
+    );
+}
+
+@utility cyber-glow-tertiary {
+  filter: drop-shadow(
+      0 0 5px color-mix(in oklab, var(--neon-tertiary) 70%, transparent)
+    )
+    drop-shadow(
+      0 0 14px color-mix(in oklab, var(--neon-tertiary) 35%, transparent)
+    );
+}
+
+/* --- Text glow / chromatic aberration ---------------------------------- */
+@utility cyber-text-glow {
+  text-shadow: 0 0 8px color-mix(in oklab, var(--neon) 55%, transparent),
+    0 0 22px color-mix(in oklab, var(--neon) 25%, transparent);
+}
+
+@utility cyber-chroma {
+  text-shadow: -1.5px 0 var(--neon-secondary), 1.5px 0 var(--neon-tertiary);
+}
+
+/* Static chromatic offset + occasional mechanical glitch */
+@utility cyber-glitch {
+  text-shadow: -2px 0 var(--neon-secondary), 2px 0 var(--neon-tertiary);
+  animation: glitch 3.6s steps(1) infinite;
+}
+
+/* Blinking terminal cursor appended to the element */
+@utility cyber-cursor {
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 0.6ch;
+    height: 1em;
+    margin-left: 0.15em;
+    vertical-align: -0.12em;
+    background: var(--neon);
+    animation: blink 1s step-end infinite;
+  }
+}
+
+/* --- CRT scanline overlay (page-wide) ---------------------------------- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 2px,
+    color-mix(in oklab, #000 14%, transparent) 2px,
+    color-mix(in oklab, #000 14%, transparent) 4px
+  );
+  opacity: 0.35;
+}
+
+/* --- Keyframes ---------------------------------------------------------- */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes rgbShift {
+  0%,
+  100% {
+    text-shadow: -2px 0 var(--neon-secondary), 2px 0 var(--neon-tertiary);
+  }
+  50% {
+    text-shadow: 2px 0 var(--neon-secondary), -2px 0 var(--neon-tertiary);
+  }
+}
+
+@keyframes glitch {
+  0%,
+  90%,
+  100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+  91% {
+    transform: translate(-2px, 1px) skew(-3deg);
+  }
+  93% {
+    transform: translate(2px, -1px) skew(3deg);
+  }
+  95% {
+    transform: translate(-1px, -1px) skew(0deg);
+  }
+  97% {
+    transform: translate(1px, 1px) skew(0deg);
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+/* --- Reduced motion ----------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    display: none;
+  }
+
+  .cyber-glitch,
+  .cyber-cursor::after,
+  .animate-blink,
+  .animate-flicker,
+  .animate-scan,
+  .animate-rgb-shift,
+  .animate-pulse {
+    animation: none !important;
+  }
+
+  .cyber-glitch {
+    text-shadow: -1.5px 0 var(--neon-secondary), 1.5px 0 var(--neon-tertiary);
+  }
+}

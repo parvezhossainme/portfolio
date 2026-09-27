@@ -75,12 +75,12 @@ export function Navbar() {
             whileTap={{ scale: 0.95 }}
             className="flex items-center space-x-2"
           >
-            <div className="h-8 w-8 rounded-md bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">
+            <div className="cyber-chamfer-sm cyber-glow-sm flex h-8 w-8 items-center justify-center border border-primary/60 bg-primary/10">
+              <span className="font-display text-sm font-bold text-primary">
                 {siteConfig.author.split(' ').map(n => n[0]).join('')}
               </span>
             </div>
-            <span className="hidden sm:block font-semibold text-foreground">
+            <span className="hidden font-display text-sm font-bold tracking-widest text-foreground uppercase sm:block">
               {siteConfig.author}
             </span>
           </motion.div>
@@ -99,7 +99,7 @@ export function Navbar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    'group relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80 focus:text-foreground/80',
+                    'group relative px-3 py-2 font-mono text-xs font-medium uppercase tracking-widest transition-colors hover:text-foreground/80 focus:text-foreground/80',
                     pathname === item.href
                       ? 'text-foreground'
                       : 'text-foreground/60'
@@ -134,7 +134,7 @@ export function Navbar() {
                   <button
                     type="button"
                     className={cn(
-                      'group/trigger flex items-center gap-1 rounded px-3 py-2 text-sm font-medium outline-none transition-colors hover:text-foreground/80 focus-visible:text-foreground/80',
+                      'group/trigger flex items-center gap-1 rounded px-3 py-2 font-mono text-xs font-medium uppercase tracking-widest outline-none transition-colors hover:text-foreground/80 focus-visible:text-foreground/80',
                       isToolsActive ? 'text-foreground' : 'text-foreground/60'
                     )}
                   >
@@ -197,7 +197,7 @@ export function Navbar() {
             variant="ghost"
             size="sm"
             asChild
-            className="h-8 w-8 p-0"
+            className="h-9 w-9 p-0"
           >
             <Link
               href={siteConfig.links.github}
@@ -215,7 +215,7 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="sm"
-                className="h-8 w-8 p-0"
+                className="h-9 w-9 p-0"
                 aria-label="Toggle menu"
               >
                 {isOpen ? (
@@ -241,7 +241,7 @@ export function Navbar() {
                       href={item.href}
                       onClick={() => setIsOpen(false)}
                       className={cn(
-                        'flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground',
+                        'flex items-center rounded-md px-3 py-2 font-mono text-xs font-medium uppercase tracking-wider transition-colors hover:bg-accent hover:text-accent-foreground',
                         pathname === item.href
                           ? 'bg-accent text-accent-foreground'
                           : 'text-foreground/60 hover:text-foreground'
@@ -261,7 +261,7 @@ export function Navbar() {
 
                 {/* Tools */}
                 <div className="space-y-3">
-                  <h3 className="text-sm font-semibold">Tools</h3>
+                  <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.3em] text-primary">Tools</h3>
                   <div className="space-y-1">
                     {siteConfig.tools.map((tool) => {
                       const Icon = tool.icon
@@ -284,7 +284,7 @@ export function Navbar() {
                       );
 
                       const itemClass =
-                        'flex items-start gap-3 rounded-md px-3 py-2 text-sm font-medium text-foreground/60 transition-colors hover:bg-accent hover:text-accent-foreground';
+                        'flex items-start gap-3 rounded-md px-3 py-2 font-mono text-xs font-medium uppercase tracking-wider text-foreground/60 transition-colors hover:bg-accent hover:text-accent-foreground';
 
                       return tool.external ? (
                         <a
@@ -315,7 +315,7 @@ export function Navbar() {
 
                 {/* Bio */}
                 <div className="space-y-3">
-                  <h3 className="text-sm font-semibold">About</h3>
+                  <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.3em] text-primary">About</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {siteConfig.description}
 
@@ -326,7 +326,7 @@ export function Navbar() {
 
                 {/* Social Links */}
                 <div className="space-y-3">
-                  <h3 className="text-sm font-semibold">Connect</h3>
+                  <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.3em] text-primary">Connect</h3>
                   <div className="grid grid-cols-2 gap-2">
                     {siteConfig.social.map((social) => {
                       const Icon = social.icon ? iconMap[social.icon as keyof typeof iconMap] : null;

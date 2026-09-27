@@ -9,8 +9,8 @@ import { Label } from '@/components/ui/label';
 function Toast({ message, open }: { message: string; open: boolean }) {
   if (!open) return null;
   return (
-    <div className="fixed bottom-6 right-6 z-50 rounded-md bg-slate-900 text-white px-4 py-2 shadow-md">
-      {message}
+    <div className="cyber-chamfer-sm cyber-edge cyber-glow-sm [--chamfer-edge:var(--neon)] fixed right-6 bottom-6 z-50 border-0 bg-card px-4 py-2 font-mono text-sm text-foreground">
+      <span className="text-primary">&gt;</span> {message}
     </div>
   );
 }
@@ -71,7 +71,7 @@ export default function ContactForm() {
         <input type="hidden" name="_subject" value="New contact from website" />
         <div className="flex items-center gap-3">
           <Button type="submit" disabled={loading}>{loading ? 'Sending...' : 'Send message'}</Button>
-          <p className="text-sm text-muted-foreground">We will reply within 2 business days.</p>
+          <p className="font-mono text-xs text-muted-foreground">We will reply within 2 business days.</p>
         </div>
       </form>
 

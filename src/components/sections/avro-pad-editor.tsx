@@ -272,7 +272,7 @@ function editorReducer(state: EditorState, action: EditorAction): EditorState {
 function ModePill({ active, children }: { active: boolean; children: string }) {
     return (
         <span
-            className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] transition ${active ? "bg-primary text-primary-foreground shadow-sm" : "text-muted-foreground"}`}
+            className={`cyber-chamfer-sm px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] transition ${active ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
         >
             {children}
         </span>
@@ -454,13 +454,13 @@ export function AvroPadEditor() {
 
     return (
         <section className="relative isolate h-full overflow-hidden bg-transparent">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,0,0,0.05),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(0,0,0,0.03),transparent_28%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.04),transparent_28%)]" />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 [mask-image:radial-gradient(ellipse_72%_58%_at_50%_0%,#000_56%,transparent_100%)] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]" />
-            <div className="pointer-events-none absolute -left-24 top-12 h-56 w-56 rounded-full bg-primary/10 blur-3xl dark:bg-primary/20" />
-            <div className="pointer-events-none absolute -right-20 bottom-10 h-64 w-64 rounded-full bg-foreground/5 blur-3xl dark:bg-primary/10" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,var(--neon),transparent_35%),radial-gradient(circle_at_bottom_right,var(--neon-secondary),transparent_35%)] opacity-[0.07]" />
+            <div className="cyber-grid cyber-grid-fade pointer-events-none absolute inset-0 opacity-40" />
+            <div className="pointer-events-none absolute top-12 -left-24 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
+            <div className="pointer-events-none absolute -right-20 bottom-10 h-64 w-64 rounded-full bg-neon-secondary/10 blur-3xl" />
 
             <div className="relative mx-auto flex h-full max-w-7xl flex-col gap-3 p-2 sm:p-3 lg:gap-4 lg:p-4">
-                <div className="flex items-center justify-between gap-3 rounded-[1.25rem] border border-border/60 bg-card/80 px-4 py-2.5 shadow-sm sm:px-5">
+                <div className="cyber-chamfer-sm cyber-edge [--chamfer-edge:var(--border)] flex items-center justify-between gap-3 border-0 bg-card/80 px-4 py-2.5 shadow-sm sm:px-5">
                     <div className="space-y-1">
                         <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
                             Avro Pad
@@ -472,7 +472,7 @@ export function AvroPadEditor() {
                     <button
                         type="button"
                         onClick={toggleMode}
-                        className="inline-flex items-center rounded-full border border-border/60 bg-background p-1 text-xs font-semibold uppercase tracking-[0.24em] text-foreground shadow-sm"
+                        className="cyber-chamfer-sm cyber-edge [--chamfer-edge:var(--border)] inline-flex items-center border-0 bg-background p-1 text-xs font-semibold uppercase tracking-[0.24em] text-foreground shadow-sm"
                         aria-label="Toggle input mode"
                     >
                         <ModePill active={state.mode === "bn"}>BN</ModePill>
@@ -480,11 +480,11 @@ export function AvroPadEditor() {
                     </button>
                 </div>
 
-                <div className="relative flex min-h-0 flex-1 overflow-hidden rounded-[1.5rem] border border-border/60 bg-card/85 p-2 shadow-sm sm:p-3">
-                    <div className="relative flex  flex-1 flex-col overflow-hidden rounded-[1.25rem] border border-border/60 bg-background shadow-sm">
+                <div className="cyber-chamfer cyber-edge [--chamfer-edge:var(--border)] relative flex min-h-0 flex-1 overflow-hidden border-0 bg-card/85 p-2 shadow-sm sm:p-3">
+                    <div className="cyber-chamfer-sm cyber-edge [--chamfer-edge:var(--border)] relative flex flex-1 flex-col overflow-hidden border-0 bg-background shadow-sm">
                         {suggestionItems.length > 0 ?
                             <div
-                                className={`absolute z-20 w-44 overflow-hidden rounded-xl border border-border/60 bg-popover text-popover-foreground shadow-[0_24px_40px_rgba(0,0,0,0.14)] transition-opacity duration-100 ${popupPosition.visible ? "opacity-100" : "pointer-events-none opacity-0"}`}
+                                className={`cyber-chamfer-sm cyber-edge [--chamfer-edge:var(--border)] absolute z-20 w-44 overflow-hidden border-0 bg-popover text-popover-foreground shadow-lg transition-opacity duration-100 ${popupPosition.visible ? "opacity-100" : "pointer-events-none opacity-0"}`}
                                 style={{
                                     left: `${popupPosition.left}px`,
                                     top: `${popupPosition.top}px`,

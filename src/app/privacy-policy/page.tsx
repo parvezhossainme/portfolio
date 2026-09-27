@@ -16,9 +16,9 @@ export default function PrivacyPolicy() {
   return (
     <main className="max-w-5xl mx-auto pt-20 sm:pt-24 pb-12 px-4">
       <div className="transition-all duration-300 ease-out">
-      <Card>
+      <Card variant="terminal">
         <CardHeader>
-          <CardTitle>Privacy Policy</CardTitle>
+          <CardTitle className="uppercase">Privacy Policy</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="text-base lg:text-lg space-y-4">
@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
           <p className="mb-2 text-sm">We do not collect personal details about you unless it is necessary to provide a service you requested, required by law, or you voluntarily provide them (for example via a contact form, job application, or purchase). We aim to collect the minimum information needed to fulfil the requested purpose and to retain it only as long as necessary.</p>
 
 
-          <h3 id="toc" className="text-lg font-medium mt-6">Table of Contents</h3>
+          <h3 id="toc" className="font-display text-lg font-bold uppercase tracking-wide mt-6">Table of Contents</h3>
           <ul className="list-disc list-inside my-3 space-y-1 text-sm">
             <li><Link href="#collection" className="underline text-primary">Information We Collect</Link></li>
             <li><Link href="#use" className="underline text-primary">How We Use Information</Link></li>
